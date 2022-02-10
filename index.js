@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 var app = express()
     .use(express.json({limit : '500000kb'}))
+    .get('/', (req, res)=> {
+        res.send('go to /randomImgs')
+    })
     .get('/randomImgs', (req, res)=> {
         let num = Math.floor(Math.random() * 10)
         if(num == 0){
