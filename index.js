@@ -16,7 +16,7 @@ var app = express()
             else res.sendFile(__dirname + '/imgs/SSR_0.PNG')
         }
         else if(num < 4){
-            res.sendFile(__dirname + '/imgs/R_0.PNG')
+            res.sendFile(__dirname + '/imgs/R_0.png')
         }
         else{ 
             res.sendFile(__dirname + '/imgs/N_0.PNG')
