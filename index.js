@@ -4,7 +4,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 
 var app = express()
-    .use(express.json({limit : '500000kb'}))
+    .use(express.json({limit : '50000kb'}))
     .get('/', (req, res)=> {
         res.send('go to /randomImgs')
     })
