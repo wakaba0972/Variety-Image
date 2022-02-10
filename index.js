@@ -9,7 +9,7 @@ var app = express()
     .get('/', (req, res)=> {
         res.send('go to /randomImgs')
     })
-    .get('/randomImgs', (req, res)=> {
+    .get('/randomImgs.png', (req, res)=> {
         let num = Math.floor(Math.random() * 10)
         res.set('Content-Type', 'image/png');
         
