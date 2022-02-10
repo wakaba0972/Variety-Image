@@ -9,19 +9,17 @@ var app = express()
     .get('/', (req, res)=> {
         res.send('go to /randomImgs')
     })
-    .get('/randomImgs.png', (req, res)=> {
+    .get('/ri', (req, res)=> {
         let num = Math.floor(Math.random() * 10)
-        res.set('Content-Type', 'image/png');
-        
         if(num == 0){
-            if(Math.floor(Math.random() * 10) < 3) res.sendFile(__dirname + '/imgs/SSR_1.png')
-            else res.sendFile(__dirname + '/imgs/SSR_0.PNG')
+            if(Math.floor(Math.random() * 10) < 3) res.redirect('SSR_1.png')
+            else res.redirect('SSR_0.PNG')
         }
         else if(num < 4){
-            res.sendFile(__dirname + '/imgs/R_0.png')
+            res.redirect('R_0.png')
         }
         else{ 
-            res.sendFile(__dirname + '/imgs/N_0.PNG')
+            res.redirect('N_0.PNG')
         }
     })
     .listen(PORT, ()=> console.log('Listening on ' + PORT))
