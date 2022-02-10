@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 var app = express()
     .use(express.json({limit : '50000kb'}))
+    .use(express.static('/imgs'))
     .get('/', (req, res)=> {
         res.send('go to /randomImgs')
     })
