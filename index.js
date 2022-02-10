@@ -12,6 +12,7 @@ var app = express()
     .get('/randomImgs', (req, res)=> {
         let num = Math.floor(Math.random() * 10)
         res.set('Content-Type', 'image/png');
+        res.sendFile(__dirname + '/imgs/SSR_0.PNG')
         if(num == 0){
             if(Math.floor(Math.random() * 10) < 3) res.sendFile(__dirname + '/imgs/SSR_1.png')
             else res.sendFile(__dirname + '/imgs/SSR_0.PNG')
